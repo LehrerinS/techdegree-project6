@@ -2,15 +2,12 @@ package com.teamtreehouse.publicdata.model;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
-import java.text.DecimalFormat;
-import java.util.Objects;
 
 @Entity
 public class Country {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+//    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private String code;
-
     @Column
     private String name;
     @Column
@@ -21,9 +18,10 @@ public class Country {
     public Country(){}
 
     public Country(CountryBuilder builder) {
-        this.name = name;
-        this.internetUsers = internetUsers;
-        this.adultLiteracyRate = adultLiteracyRate;
+        this.code = builder.code;
+        this.name = builder.name;
+        this.internetUsers = builder.internetUsers;
+        this.adultLiteracyRate = builder.adultLiteracyRate;
     }
 
     public String getCode() {
@@ -74,20 +72,26 @@ public class Country {
     }
 
     public static class CountryBuilder{
-        private String name;
-        private double internetUsers;
-        private double adultLiteracyRate;
 
-        public CountryBuilder(String name){
+        private String code;
+        private String name;
+        private BigDecimal internetUsers;
+        private BigDecimal adultLiteracyRate;
+
+        public CountryBuilder(String code, String name){
+            System.out.println("now I am in the builder constructor");
+            System.out.println(code);
+            System.out.println(name);
+            this.code = code;
             this.name = name;
         }
 
-        public CountryBuilder withInternetUsers(double internetUsers){
+        public CountryBuilder withInternetUsers(BigDecimal internetUsers){
             this.internetUsers = internetUsers;
             return this;
         }
 
-        public CountryBuilder withLiteracy(double adultLiteracyRate){
+        public CountryBuilder withLiteracy(BigDecimal adultLiteracyRate){
             this.adultLiteracyRate = adultLiteracyRate;
             return this;
         }

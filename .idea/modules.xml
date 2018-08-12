@@ -3,6 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/techdegree-project6.iml" filepath="$PROJECT_DIR$/techdegree-project6.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/techdegree-project6_main.iml" filepath="$PROJECT_DIR$/.idea/modules/techdegree-project6_main.iml" group="techdegree-project6" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/techdegree-project6_test.iml" filepath="$PROJECT_DIR$/.idea/modules/techdegree-project6_test.iml" group="techdegree-project6" />
     </modules>
   </component>
 </project>
